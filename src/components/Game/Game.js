@@ -1,6 +1,6 @@
 import React from 'react';
-import Guess from '../Guess';
-import Form from '../Form';
+import Results from '../Results';
+import Input from '../Input';
 
 import { sample } from '../../utils';
 import { WORDS } from '../../data';
@@ -19,8 +19,8 @@ function Game() {
 
   return (
     <>
-      <Guess guesses={guesses} />
-      <Form handleSubmitGuess={handleSubmitGuess} />
+      <Results guesses={guesses} />
+      <Input handleSubmitGuess={handleSubmitGuess} />
     </>
   );
 }

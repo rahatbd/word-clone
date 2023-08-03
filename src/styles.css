@@ -32,8 +32,7 @@ body {
 
 button {
   margin: 0;
-  padding: 0;
-  border: none;
+  border: 2px solid white;
   background: transparent;
   cursor: pointer;
   text-align: left;
@@ -161,6 +160,10 @@ h1 {
   outline-offset: 4px;
 }
 
+.guess-input-wrapper input:focus-visible {
+  outline: 2px solid var(--color-gray-300);
+}
+
 .banner {
   position: fixed;
   left: 0;
@@ -229,4 +232,44 @@ h1 {
   to {
     transform: translateY(0%);
   }
+}
+
+/*
+  Keyboard styles
+*/
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.keyboard .letter {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 4px;
+  display: grid;
+  place-content: center;
+  background-color: var(--color-gray-900);
+  font-weight: 600;
+}
+
+.keyboard .letter.correct {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.keyboard .letter.incorrect {
+  background-color: var(--color-gray-300);
+  color: white;
+}
+
+.keyboard .letter.misplaced {
+  background-color: var(--color-warning);
+  color: white;
 }

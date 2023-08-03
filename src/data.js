@@ -38,6 +38,7 @@ export const WORDS = [
   'HOVER',
   'CANDY',
   'ABOVE',
+  'BELOW',
   'PHONE',
   'OTHER',
   'SMART',
@@ -49,4 +50,5 @@ export const WORDS = [
   'HONEY',
   'FLAKE',
   'SOUND',
+  'RAHAT',
 ];

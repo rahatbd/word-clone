@@ -4,11 +4,14 @@ import Guess from '../Guess';
 import { range } from '../../utils';
 import { NUM_OF_GUESSES_ALLOWED } from '../../constants';
 
-function Results({ guesses, answer }) {
+function Results({ validatedGuesses }) {
   return (
     <div className="guess-results">
       {range(NUM_OF_GUESSES_ALLOWED).map(num => (
-        <Guess value={guesses[num]} answer={answer} key={num} />
+        <Guess
+          key={num}
+          value={validatedGuesses[num]}
+        />
       ))}
     </div>
   );

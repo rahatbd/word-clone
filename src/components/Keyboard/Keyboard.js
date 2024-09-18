@@ -8,8 +8,26 @@ const ROWS = [
 
 function getStatusByLetter(validatedGuesses) {
   const statusObj = {};
-  validatedGuesses.forEach(guess => {
-    guess.forEach(({ letter, status }) => (statusObj[letter] = status));
+  const allLetters = validatedGuesses.flat();
+
+  allLetters.forEach(({letter, status}) => {
+    const currentStatus = statusObj[letter];
+
+    if (currentStatus === undefined) {
+      statusObj[letter] = status;
+      return;
+    }
+
+    const STATUS_RANKS = {
+      correct: 1,
+      misplaced: 2,
+      incorrect: 3,
+    };
+
+    const currentStatusRank = STATUS_RANKS[currentStatus];
+    const newStatusRank = STATUS_RANKS[status];
+
+    if (newStatusRank < currentStatusRank) statusObj[letter] =  status;
   });
   return statusObj;
 }
